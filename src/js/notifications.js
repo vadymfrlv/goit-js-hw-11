@@ -3,7 +3,7 @@ import Notiflix from 'notiflix';
 Notiflix.Notify.init({
   width: '300px',
   closeButton: false,
-  distance: '2px',
+  distance: '4px',
 });
 
 const onFetchSuccess = value => {
