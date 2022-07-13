@@ -65,8 +65,8 @@ const runIntersectionObserver = () => {
   };
 
   const observer = new IntersectionObserver(callback, {
-    rootMargin: '0px',
-    threshold: 0.0,
+    rootMargin: '0px 0px 200px 0px',
+    threshold: 1.0,
   });
   observer.observe(document.querySelector('.photo-card:last-child'));
 };
