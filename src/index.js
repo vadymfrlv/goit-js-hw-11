@@ -21,6 +21,7 @@ const onSearch = async e => {
     if (pixabayApi.getTotalHits() !== 0) {
       onFetchSuccess(pixabayApi.getTotalHits());
       runIntersectionObserver();
+      searchQuery.value = '';
     }
   } else {
     onFetchError();
