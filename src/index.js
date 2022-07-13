@@ -20,7 +20,7 @@ const onSearch = async e => {
     await fetchAndRenderPhotos();
     if (pixabayApi.getTotalHits() !== 0) {
       onFetchSuccess(pixabayApi.getTotalHits());
-      startIntersectionObserver();
+      runIntersectionObserver();
     }
   } else {
     onFetchError();
@@ -45,7 +45,7 @@ const scrollTop = () => {
   });
 };
 
-const startIntersectionObserver = () => {
+const runIntersectionObserver = () => {
   const callback = async (entries, observer) => {
     if (pixabayApi.page !== pixabayApi.totalPages) {
       if (entries[0].isIntersecting) {
@@ -64,7 +64,7 @@ const startIntersectionObserver = () => {
   };
 
   const observer = new IntersectionObserver(callback, {
-    rootMargin: '0px 0px 200px 0px',
+    rootMargin: '0px',
     threshold: 0.0,
   });
   observer.observe(document.querySelector('.photo-card:last-child'));
